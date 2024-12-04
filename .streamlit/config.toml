@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#AC947F"        # Couleur principale
+backgroundColor = "#283359"    # Couleur de l'arrière-plan
+secondaryBackgroundColor = "#4A4E69"  # Couleur des conteneurs ou cartes
+textColor = "#FFFFFF"          # Couleur du texte
+font = "sans serif"

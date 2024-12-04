@@ -17,4 +17,14 @@ class Formateur:
         self.ADRESSE = adresse
 
     def __str__(self):
-        return f" {self.NOM_FORMATEUR} || "
+        return f" {self.NOM_FORMATEUR} || {self.FORMATION_ID} || "
+    
+class Client:
+    def __init__(self, id, nom, username, prenom, age):
+        self.id = id
+        self.nom = nom
+        self.prenom = prenom 
+        self.age = age
+        self.username = username
+    def __str__(self):
+        return f" {self.nom} || {self.prenom} || {self.id} "

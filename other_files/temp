@@ -1,0 +1,60 @@
+
+def check_credentials(username, password):
+    conn = connect_to_oracle()
+    cursor = conn.cursor()
+    
+    # Exemple de requête SQL pour vérifier les informations de l'utilisateur
+    query = "SELECT * FROM clients WHERE username = :username AND mot_de_passe = :password"
+    cursor.execute(query, {"username": username, "password": password})
+    
+    user = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if user:
+        return True  # Authentification réussie
+    else:
+        return False  # Authentification échouée
+fun()
+'''if 'authenticated' not in st.session_state:
+    st.session_state.authenticated = False  # Initialisation de la variable d'authentification
+
+
+if not st.session_state.authenticated:
+    # Demander à l'utilisateur de saisir ses informations
+    username = st.text_input("Nom d'utilisateur")
+    password = st.text_input("Mot de passe", type="password")
+
+    # Vérifier l'authentification
+    if st.button("Se connecter"):
+        if check_credentials(username, password):
+            # Authentification réussie, stocker l'état dans la session
+            st.session_state.authenticated = True
+            st.session_state.username = username  # Stocker le nom d'utilisateur
+
+            # Changer le titre de la page
+            st.title("SeFormer - Accueil")
+
+            # Afficher un message de bienvenue
+            st.success(f"Bienvenue {username}!")
+
+            # Afficher le contenu principal
+            fun()
+
+        else:
+            st.error("Nom d'utilisateur ou mot de passe incorrect.")
+else:
+    # Si déjà authentifié, afficher la page d'accueil
+    st.title("SeFormer - Accueil")
+    st.success(f"Bienvenue {st.session_state.username}!")
+    fun()
+
+    # Option de déconnexion
+    if st.button("Se déconnecter"):
+        st.session_state.authenticated = False
+        del st.session_state.username
+        st.experimental_rerun()  # Recharger l'application après la déconnexion
+'''
+
+
+
