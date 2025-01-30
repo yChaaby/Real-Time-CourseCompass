@@ -6,7 +6,7 @@ from models import Formation, Formateur
 from tools import connect_to_oracle, search_in_formateurs, search_cats, rechercher_formation_avancee, check_credentials, get_user
 
 
-#st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 titre = st.empty()
 
 hide_header_style = """

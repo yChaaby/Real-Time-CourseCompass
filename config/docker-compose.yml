@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+# =====
+#  spark-master:
+#    image: bitnami/spark:latest
+#    container_name: spark-master
+#    environment:
+#      - SPARK_MODE=master
+#      - SPARK_MASTER_WEBUI_PORT=8080
+#    ports:
+#      - "8080:8080"
+#   networks:
+#      - spark-network
+# ======
+  spark-worker1:
+    image: bitnami/spark:latest
+    container_name: spark-worker1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER=spark://192.168.1.44:7077
+      - SPARK_MASTER_URL=spark://192.168.1.44:7077
+  spark-worker2:
+    image: bitnami/spark:latest
+    container_name: spark-worker2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER=spark://192.168.1.44:7077
+      - SPARK_MASTER_URL=spark://192.168.1.44:7077
+    #depends_on:
+      #- spark-master
+    
+
+  jupyter:
+    image: jupyter/pyspark-notebook:latest
+    container_name: jupyter-notebook
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    
+    #depends_on:
+    #  - spark-master
+
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    ports:
+      - 9092:9092
+    environment:
+      - KAFKA_ENABLE_KRAFT=yes
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - zookeeper.connect=localhost:2181
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:2181
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@127.0.0.1:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_NODE_ID=1
+    volumes:
+      - ./kafka:/bitnami/kafka
+    #networks:
+    # - spark-network
+networks:
+  spark-network:
+    driver: bridge

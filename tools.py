@@ -1,4 +1,7 @@
 import cx_Oracle
+from kafka import KafkaProducer
+import json
+import streamlit as st
 from typing import List
 from models import Formation, Formateur, Client
 # Connexion à la base de données Oracle
@@ -9,10 +12,11 @@ def connect_to_oracle():
         print("An exception occurred")
     # Remplace les valeurs ci-dessous par tes propres paramètres de connexion
     dsn = cx_Oracle.makedsn("localhost", "1521", service_name="XEPDB1")
-    conn = cx_Oracle.connect(user="SEFORMAER_PLUS", password="153300", dsn=dsn)
+    conn = cx_Oracle.connect(user="SEFORMER", password="153300", dsn=dsn)
     return conn
 # Fonction de recherche dans la base de données
 def search_in_formateurs(ID_for):
+
     conn = connect_to_oracle()
     cursor = conn.cursor()
     # Exemple de requête SQL, avec des paramètres pour éviter les injections SQL
@@ -23,6 +27,7 @@ def search_in_formateurs(ID_for):
     cursor.close()
     conn.close()
     list_formateurs = []
+    streamInteraction(formation_id=ID_for,username=(st.session_state.user).id )
     for row in results:
         list_formateurs.append(Formateur(
         nom_formateur=row[5],
@@ -35,30 +40,42 @@ def search_in_formateurs(ID_for):
 def rechercher_formation_avancee(p_chaine, cat):
     conn = connect_to_oracle()
     cursor = conn.cursor()
-    i=0
+
     # Déclaration du curseur pour récupérer les résultats
     result_cursor = cursor.var(cx_Oracle.CURSOR)
+
+    # Si la catégorie est "Tous les categories", ajuster le paramètre
     if "Tous les categories" in cat:
-        i = 1
-        cat = "text"
-    # Appel de la procédure
-    print(p_chaine, result_cursor, cat, i)
-    cursor.callproc("rechercher_formation_avancee", [p_chaine, cat,result_cursor, i])
+        cat = "text"  # Ou tout autre traitement nécessaire selon vos besoins
     
-    # Récupération des résultats
-    results = result_cursor.getvalue().fetchall()
-    
-    # Fermer le curseur et la connexion
-    cursor.close()
-    conn.close()
-    print(results)
-    list_formation = []
-    for row in results:
-        list_formation.append(Formation(id_formation=row[0], domaine_categorie=row[1], sous_domaine_categorie=row[2], formation_cours=row[3]))
-    Ids = [row[0] for row in results]
-    Nom_for = [row[3] for row in results]
-    
-    return list_formation
+    # Appel de la procédure stockée
+    try:
+        cursor.callproc("rechercher_formation_avancee", [p_chaine, 0, 12, result_cursor])
+
+        # Récupérer les résultats depuis le curseur
+        results = result_cursor.getvalue().fetchall()
+
+        # Fermer le curseur et la connexion
+        cursor.close()
+        conn.close()
+
+        # Création de la liste des formations
+        list_formation = []
+        for row in results:
+            list_formation.append(Formation(id_formation=row[0],
+                                            domaine_categorie=row[1],
+                                            sous_domaine_categorie=row[2],
+                                            formation_cours=row[3]
+                                            ))
+
+        # Retourner la liste des formations
+        return list_formation
+
+    except cx_Oracle.DatabaseError as e:
+        print(f"Une erreur est survenue: {e}")
+        cursor.close()
+        conn.close()
+
 def search_cats():
     conn = connect_to_oracle()
     cursor = conn.cursor()
@@ -81,7 +98,7 @@ def check_credentials(username, password):
     user = cursor.fetchone()
     cursor.close()
     conn.close()
-
+    print("--",user)
     if user:
         return True  # Authentification réussie
     else:
@@ -98,3 +115,15 @@ def get_user(username):
     conn.close()
     for row in results:
         return Client(id = row[0], nom=row[1], prenom=row[2], age=row[3], username=username)
+    
+def streamInteraction(username, formation_id, with_formation=None):
+    producer = KafkaProducer(
+        bootstrap_servers=['localhost:9092'],  # Adresse du broker Kafka
+        value_serializer=lambda v: json.dumps(v).encode('utf-8')  # Sérialisation JSON
+    )
+    topic = "interaction"
+    print("le ID : ----",username,type(username))
+    print("le Iid_formation : ----",formation_id,type(formation_id))
+    message = {"id_client": username, "id_formation": formation_id}
+    producer.send(topic, value=message)
+

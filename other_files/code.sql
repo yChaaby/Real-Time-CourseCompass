@@ -46,3 +46,6 @@ BEGIN
         DBMS_OUTPUT.put_line('UPDATE FORMATEURS SET TEMP_ID = '|| tempvar ||' where ID_FORMATEUR = '|| le_id.ID_FORMATEUR ||' ;');
     END LOOP;
 END;
+
+
+INSERT INTO FORMER(ID_FORMATION, ID_FORMATEUR, ADRESSE, TELEPHONE, SITE_WEB) VALUES (233,(SELECT ID_FORMATEUR FROM FORMATEURS WHERE NOM_FORMATEUR='ESSEC Business School'),'en ligne','0570708909','https://www.coursera.org/learn/fondamentaux-negociation');
