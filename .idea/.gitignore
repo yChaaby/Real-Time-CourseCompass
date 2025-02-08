@@ -6,3 +6,5 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+../config/oracle/instantclient-basic-linux.x64-23.7.0.25.01.zip
+../config2/oracle/instantclient-basic-linux.x64-23.7.0.25.01.zip
