@@ -1,0 +1,224 @@
+ID_SOUS_DOMAINE,ID_DOMAINE,NOM_SOUS_DOMAINE
+3,4,Achats : méthodes et outils
+4,4,Achats publics
+5,5,Les métiers
+6,5,Communication de l’assistant(e)
+7,6,Recouvrement et contentieux
+8,9,Devenir Coach professionnel
+9,10,Pratiques et métiers du contrôle de gestion
+10,10,Le contrôle de gestion sectoriel et par fonction
+11,12,Leadership
+12,13,Prise de parole en public
+13,13,Gestion du temps
+14,17,Connaissance de soi et des autres
+15,17,Prendre soin de soi - Bien-être au travail
+16,13,Créativité et capacités d'adaptation
+17,18,Risques juridiques et financiers à l'international
+18,24,Culture digitale
+19,26,Direction informatique
+20,26,Méthodes Agiles
+21,28,Marketing de contenus
+22,28,Marketing stratégique
+23,28,Web marketing
+24,31,Le Lean
+25,33,Industrialiser : méthodes et ingénierie process
+26,34,Les clés de la gestion de projet
+27,38,Organisation efficace du travail
+28,38,Communication à travers le numérique
+29,39,Rémunération et pilotage RH
+30,39,"Santé et qualité de vie au travail, risques psychosociaux "
+31,39,Formation et développement des compétences
+32,39,"Santé et qualité de vie au travail, risques psychosociaux"
+33,40,Manager à distance
+34,40,Réussir la transition digitale
+35,12,Nouvelles formes du travail
+36,32,Actualité de la paie
+37,37,Préparation aux concours de la fonction publique
+38,6,Gestion des risques et Bâle III
+39,6,Gestion d'actifs
+40,7,Logiciels PAO - CAO
+41,12,Digitalisation et intelligence artificielle
+42,12,Finance - Gestion
+43,12,Ressources humaines
+44,13,Réunion - Intelligence collective
+45,16,Droit du travail et relations sociales
+46,17,Affirmation de soi
+47,17,Gestion des émotions
+48,17,Parcours professionnel - Changement - Retraite
+49,17,Leadership et impact personnel
+50,17,Parcours et évolution professionnelle
+51,13,Prise de décision
+52,18,Import
+53,19,Supply Chain - logistique
+54,20,Management d'équipe : perfectionnement
+55,21,Pilotage et conception de dispositifs de formation
+56,24,Intelligence Artificielle
+57,24,Marketing digital et Communication digitale
+58,26,Sécurité - Cybersécurité
+59,27,Innovation
+60,29,Promouvoir la diversité et l'éthique au sein de l’entreprise
+61,31,Audit et contrôle interne
+62,34,Gestion de projet agile
+63,36,Environnement
+64,29,Mettre en œuvre la RSE dans les organisations
+65,37,Finances - Comptabilité - Contrôle de gestion
+66,37,Conduite de projets - Secteur public
+67,40,Garder son équilibre dans un monde en mutation
+68,41,Conception de site web
+69,41,Intelligence artificielle
+70,35,Prévention des risques psychosociaux (RPS)
+71,21,Tutorat
+72,1,Vente et négociation
+73,5,Développement personnel de l'assistant(e)
+74,8,Accompagnement au changement
+75,10,Les outils du pilotage de la performance
+76,10,Analyse et visualisation des data
+77,12,Direction - Management
+78,12,Efficacité personnelle - Communication
+79,13,Communication écrite
+80,14,Finance - Gestion pour non-spécialistes
+81,22,Formations en anglais
+82,25,Services Généraux et Immobilier d'entreprise
+83,27,Créativité
+84,18,Stratégie et management international
+85,18,Achats internationaux
+86,28,Communication digitale : réseaux et médias sociaux
+87,32,Actualité de la paie et journées thématiques
+88,32,Comprendre sa paie et sa retraite
+89,33,Dialoguer avec ses interlocuteurs principaux
+90,34,Cycles métiers
+91,36,Santé / Sécurité au travail
+92,38,Esprit d'initiative et d'entreprise
+93,39,Mobilité
+94,37,Management public
+95,37,Changement - Reconversion - Trajectoires professionnelles
+96,37,Communication Secteur public
+97,40,Réussir son télétravail
+98,4,Négociation d'achat
+99,6,Contrôle interne et conformité
+100,2,Communication interne et externe
+101,2,Communiquer à l'oral
+102,2,Communiquer à l'écrit
+103,11,Créer son entreprise
+104,14,Finance - Trésorerie
+105,15,Formation juridique - Droit des sociétés
+106,17,Gestion du stress
+107,17,Coopération
+108,17,Connaissance et estime de soi - Affirmation et confiance en soi
+109,17,Interagir et collaborer
+110,20,Management transversal
+111,20,Diversité et inclusion
+112,23,Optimiser son temps - Les indispensables
+113,24,Management et gouvernance
+114,18,"Douane, Transport, Logistique"
+115,28,Marketing opérationnel
+116,29,Leader/manager : incarner les valeurs de la RSE
+117,30,Métiers de la relation client
+118,30,Tous acteurs de la relation client
+119,30,Situations complexes de la relation client
+120,32,Les métiers de la paie
+121,32,Administration du personnel
+122,33,Maintenance industrielle des installations et des bâtiments
+123,33,Risques & sécurité
+124,34,Management et leadership dans les projets
+125,35,Qualité de vie (QVT) et santé au travail
+126,29,Déployer la RSE dans les métiers
+127,39,Métiers et pratiques des ressources humaines
+128,39,Marque employeur et recrutement
+129,37,Accueil et relation aux usagers
+130,40,Former à distance
+131,41,Webmarketing
+132,37,RSO / RSE
+133,1,Management commercial
+134,5,Efficacité professionnelle de l'assistant(e)
+135,6,Gestion du Patrimoine
+136,7,Outils collaboratifs
+137,3,Fiscalité
+138,10,Business partner : communiquer et challenger les opérationnels
+139,11,Financer et développer son activité
+140,11,Être entrepreneur
+141,14,Risque-client et contentieux
+142,16,"Santé et qualité de vie au travail, risques psychosociaux "
+143,18,Interculturalité - Vente et négociation
+144,19,Approvisionnements et gestion des stocks
+145,20,Leadership
+146,20,"Innovation, agilité, management à distance"
+147,20,Conduite du changement
+148,21,Formation de formateurs
+149,26,Transformation Digitale
+150,28,Tendances et culture digitale
+151,32,Paie : perfectionnement
+152,33,Manager la production
+153,35,Diversité et inclusion
+154,38,Apprendre à apprendre
+155,39,Recrutement
+156,32,Paie dans le secteur public
+157,24,Risques numériques
+158,6,Marchés des entreprises
+159,7,Logiciels bureautique
+160,16,Relations sociales
+161,16,"Formation des élu(e)s : CSE, CSSCT…"
+162,16,"Formation des élu(e)s : CSE, CSSCT"
+163,16,"Santé et qualité de vie au travail, risques psychosociaux"
+164,20,Communication - Gestion des conflits
+165,21,Pilotage de la formation et du développement des compétences
+166,21,Droit et gestion de la formation
+167,18,Risques financiers et juridiques à l'international
+168,18,ADV Transport logistique douane
+169,29,Relever le défi de l'environnement et de la transition énergétique
+170,30,"Relation client à distance - téléphone, web"
+171,33,Organiser la production
+172,33,Transition énergétique et numérique
+173,34,Certifications projets
+174,36,Qualité
+175,37,Ressources Humaines
+176,39,RH pour managers
+177,39,Posture et savoir-faire RH
+178,37,Achat et commande publique
+179,19,Supply Chain - Logistique
+180,8,Adaptation au changement
+181,12,Commercial Marketing
+182,13,Capacités relationnelles et collaboration
+183,17,Bien-être au travail
+184,17,Relations interpersonnelles - Communication
+185,13,Apprentissage et transmission
+186,19,Transport - Distribution
+187,20,Management d'équipe : les fondamentaux
+188,21,Métiers de la formation
+189,21,Ingénierie de la formation et de la professionnalisation
+190,21,Formation des formateurs
+191,23,Optimiser son temps - Méthodes et outils
+192,18,Vente et négociation - Spécial International
+193,28,Marketing - Marketing digital
+194,29,"Améliorer la santé, sécurité et qualité de vie au travail"
+195,29,Promouvoir la diversité au sein de l’entreprise
+196,30,Parcours et expérience client
+197,31,Organisation - Conseil
+198,33,Gagner en efficacité
+199,39,GEPP et développement des compétences
+200,37,Transition numérique et bureautique
+201,37,Efficacité professionnelle
+202,40,Travail et outils collaboratifs
+203,6,"Comptabilité, normes IFRS, contrôle de gestion"
+204,13,Organisation et télétravail
+205,3,Comptabilité
+206,4,Management et métiers des achats
+207,12,RSE / Développement durable
+208,14,Gestion des associations
+209,12,Gérer son patrimoine
+210,15,Droit des contrats et obligations légales
+211,17,Estime et confiance en soi
+212,13,Synthèse écrite & orale
+213,19,Logistique interne
+214,21,Formation des tuteurs et AFEST
+215,26,Projets informatiques
+216,28,Expérience client (CX-UX)
+217,32,Paie : les fondamentaux
+218,35,Développement du bien-être au travail
+219,36,Système intégré QSSE
+220,37,Développement personnel
+221,38,Collaboration à distance
+222,38,Agilité et adaptation
+223,38,Créativité et sens de l'innovation
+224,40,Vendre et négocier à distance
+225,40,Gérer des projets à distance
